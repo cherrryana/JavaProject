@@ -1,10 +1,12 @@
 package com.example.unitconverter;
 
-import com.example.unitconverter.coverters.BaseUnitConverter;
-import com.example.unitconverter.coverters.UnitTypeConverter;
-import com.example.unitconverter.coverters.length.LengthConverter;
-import com.example.unitconverter.coverters.volume.VolumeConverter;
-import javafx.beans.Observable;
+import com.example.unitconverter.converters.BaseUnitConverter;
+import com.example.unitconverter.converters.UnitTypeConverter;
+import com.example.unitconverter.converters.energy.EnergyConverter;
+import com.example.unitconverter.converters.information.InfoConverter;
+import com.example.unitconverter.converters.length.LengthConverter;
+import com.example.unitconverter.converters.time.TimeConverter;
+import com.example.unitconverter.converters.volume.VolumeConverter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -32,9 +34,16 @@ public class Controller {
 
     private static UnitTypeConverter lengthConverter = new LengthConverter();
     private static UnitTypeConverter volumeConverter = new VolumeConverter();
+    private static UnitTypeConverter infoConverter = new InfoConverter();
+    private static UnitTypeConverter timeConverter = new TimeConverter();
+    private static UnitTypeConverter jouleConverter = new EnergyConverter();
     private List<UnitTypeConverter> allUnitTypeConverters = Arrays.asList(
             lengthConverter,
-            volumeConverter);
+            volumeConverter,
+            infoConverter,
+            timeConverter,
+            jouleConverter
+            );
 
     @FXML
     public void initialize() {
